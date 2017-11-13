@@ -19,6 +19,7 @@ RUN apk update \
                 sdl2 \
                 libxcb \
                 libbz2 \
+		netcat-openbsd \
 	&& rm -rf /var/cache/apk/*
 ADD entrypoint.sh /
 COPY --from=0 /home/kixiro/aports/main/ffmpeg/src/ffmpeg-3.4/ffmpeg /usr/bin/ffmpeg
