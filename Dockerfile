@@ -20,4 +20,7 @@ RUN apk update \
                 libxcb \
                 libbz2 \
 	&& rm -rf /var/cache/apk/*
+ADD entrypoint.sh /
 COPY --from=0 /home/kixiro/aports/main/ffmpeg/src/ffmpeg-3.4/ffmpeg /usr/bin/ffmpeg
+
+ENTRYPOINT ["/entrypoint.sh"]
